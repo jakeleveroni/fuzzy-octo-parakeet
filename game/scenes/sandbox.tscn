@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://lrqsdolku2yw" path="res://prefabs/ground_units/base_ground_unit.tscn" id="1_hdfae"]
 [ext_resource type="PackedScene" uid="uid://fd52kdso64vt" path="res://prefabs/ground_units/grass_unit.tscn" id="2_5fpko"]
-[ext_resource type="Script" path="res://scripts/debug/debug_camera.gd" id="3_lsxmo"]
+[ext_resource type="Script" uid="uid://ddgs3qcen314r" path="res://scripts/debug/debug_camera.gd" id="3_lsxmo"]
 [ext_resource type="PackedScene" uid="uid://cr6sc7rht4bn2" path="res://prefabs/ground_units/2x2_grass_unit.tscn" id="3_uydxn"]
 [ext_resource type="PackedScene" uid="uid://wkpy35vqxl4o" path="res://prefabs/ground_units/dirt_unit.tscn" id="5_cx8ll"]
 [ext_resource type="PackedScene" uid="uid://cigj27lgyjv4x" path="res://prefabs/ground_units/2x2_dirt_unit.tscn" id="6_g2qbe"]
