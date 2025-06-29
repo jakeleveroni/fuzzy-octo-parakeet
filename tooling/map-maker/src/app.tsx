@@ -10,7 +10,7 @@ export function App() {
   return (
     <div className="text-center p-32">
       <Card
-        className="bg-neutral-100 border border-teal-500 rounded-md p-6 animate-pulse/10"
+        className="bg-neutral-100 border border-teal-500 rounded-md p-6"
         style={{
           boxShadow: `
          0 0 20px rgba(20, 184, 166, 0.6),
@@ -26,13 +26,13 @@ export function App() {
                 <h1 className="text-5xl font-bold my-4 leading-tight">Map Editor</h1>
               </div>
               <div>
-                <DrawerTrigger>
+                <DrawerTrigger asChild>
                   <Button>Edit Hotkeys</Button>
                 </DrawerTrigger>
               </div>
             </div>
-            <MapGrid width={10} height={5} />
-            <DrawerContent className="lg:min-w-[640px]">
+            <MapGrid width={10} height={10} />
+            <DrawerContent>
               <MapLegend />
             </DrawerContent>
           </Drawer>

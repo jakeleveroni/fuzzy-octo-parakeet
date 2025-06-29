@@ -1,3 +1,5 @@
+import { useRef, useState, type KeyboardEventHandler } from "react";
+
 type Props = {
   width: number;
   height: number;
@@ -22,13 +24,33 @@ export function MapGrid({ width, height }: Props) {
   );
 }
 
-function MapGridCell({ row, col, idx }: { row: number; col: number; idx: number }) {
+function MapGridCell({ row, col, idx }: { row: number; col: number, idx: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [value, setValue] = useState('-');
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleKeyPress: KeyboardEventHandler<HTMLDivElement> = (event) => {
+    if (isHovered) {
+      setValue(event.key)
+    }
+  }
+
   return (
     <div
-      data-testid={`${row}-${col}`}
+      ref={ref}
+      tabIndex={idx}
+      data-coords={`${row}-${col}`}
       className="size-full hover:bg-gray-200 text-center border border-gray-300 flex items-center justify-center text-sm aspect-square"
+      onMouseEnter={() => {
+        setIsHovered(true); 
+        ref.current.focus()
+      }}
+      onMouseLeave={() => {
+        setIsHovered(false)
+      }}
+      onKeyDown={handleKeyPress}
     >
-      <span className="sr-only">{idx}</span>
+      {value}
     </div>
   );
 }
