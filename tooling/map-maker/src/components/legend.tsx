@@ -2,19 +2,14 @@ import { Fragment, useRef, useState } from 'react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
+import { useKeyMapsContext } from './key-maps-provider';
 
 const sprites = ['dirt-texture.png', 'grass-texture.png'];
-const defaultHotkeys = [
-  { key: 'd', sprite: 'dirt-texture.png' },
-  { key: 'g', sprite: 'grass-texture.png' },
-];
 
 export function MapLegend() {
   const keyRef = useRef<HTMLInputElement>(null);
   const [selectedSprite, setSelectedSprite] = useState('');
-  // TODO: move to provider
-  const [associations, setAssociations] =
-    useState<{ key: string; sprite: string }[]>(defaultHotkeys);
+  const { associations, setAssociations } = useKeyMapsContext();
 
   const createNewAssociation = () => {
     const newKey = keyRef.current.value;
@@ -27,8 +22,8 @@ export function MapLegend() {
       <h2 className="font-bold text-2xl ">Hotkey Configuration</h2>
       <p>Custom hotkeys coming soon...</p>
       <div className="flex space-between gap-x-4">
-        <Input ref={keyRef} className="max-w-[50%]" placeholder="Key to Bind i.e. 'F'" disabled />
-        <Select onValueChange={setSelectedSprite} defaultValue="-" disabled>
+        <Input ref={keyRef} className="max-w-[50%]" placeholder="Key to Bind i.e. 'F'" />
+        <Select onValueChange={setSelectedSprite} defaultValue="-">
           <SelectTrigger className="w-[180px]">
             <SelectValue />
           </SelectTrigger>
@@ -43,7 +38,7 @@ export function MapLegend() {
             ))}
           </SelectContent>
         </Select>
-        <Button onClick={createNewAssociation} disabled>
+        <Button onClick={createNewAssociation}>
           Create
         </Button>
       </div>
