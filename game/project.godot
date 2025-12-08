@@ -10,7 +10,10 @@ config_version=5
 
 [application]
 
-config/name="project-liekra"
-run/main_scene="res://scenes/sandbox.tscn"
+config/name="Prototype"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.0110876, 0.0110876, 0.0110876, 1)
