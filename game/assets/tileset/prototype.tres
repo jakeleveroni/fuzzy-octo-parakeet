@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=59 format=3 uid="uid://cjwj3mda5335l"]
+[gd_resource type="TileSet" load_steps=60 format=3 uid="uid://cjwj3mda5335l"]
 
 [ext_resource type="Texture2D" uid="uid://cs1kgulie4r8h" path="res://assets/tileset/grid-base-tile.png" id="1_kndn0"]
 [ext_resource type="Texture2D" uid="uid://0rb8fjavk7hw" path="res://assets/tileset/base-tile.png" id="2_mtxm2"]
@@ -119,6 +119,60 @@ texture = ExtResource("15_whhdx")
 texture_region_size = Vector2i(256, 512)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 180)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tljn2"]
+texture_region_size = Vector2i(256, 256)
+use_texture_padding = false
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 54)
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, 54)
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, 54)
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, 54)
+0:1/0 = 0
+0:1/0/texture_origin = Vector2i(0, 54)
+1:1/0 = 0
+1:1/0/texture_origin = Vector2i(0, 54)
+2:1/0 = 0
+2:1/0/texture_origin = Vector2i(0, 54)
+3:1/0 = 0
+3:1/0/texture_origin = Vector2i(0, 54)
+0:2/0 = 0
+0:2/0/texture_origin = Vector2i(0, 54)
+1:2/0 = 0
+1:2/0/texture_origin = Vector2i(0, 54)
+2:2/0 = 0
+2:2/0/texture_origin = Vector2i(0, 54)
+3:2/0 = 0
+3:2/0/texture_origin = Vector2i(0, 54)
+0:5/0 = 0
+0:5/0/texture_origin = Vector2i(0, 54)
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+0:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+0:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_qnvm2"]
 vertices = PackedVector2Array(128, 0, 0, 64, -128, 0, 0, -64)
@@ -292,3 +346,4 @@ sources/24 = SubResource("TileSetAtlasSource_maue8")
 sources/25 = SubResource("TileSetAtlasSource_0ncxu")
 sources/26 = SubResource("TileSetAtlasSource_cuaqp")
 sources/27 = SubResource("TileSetAtlasSource_whhdx")
+sources/22 = SubResource("TileSetAtlasSource_tljn2")

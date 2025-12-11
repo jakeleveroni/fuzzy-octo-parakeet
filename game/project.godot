@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Prototype"
-run/main_scene="res://scenes/sandbox.tscn"
+run/main_scene="uid://poqv3k0fjsru"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/TileMapDual/plugin.cfg")
 
 [rendering]
 

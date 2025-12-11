@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=4 uid="uid://dg7gx17qm2hl8"]
+
+[ext_resource type="Texture2D" uid="uid://b7crajik7fiaf" path="res://assets/tilemaps/15-tile-base.png" id="1_s3p2a"]
+[ext_resource type="Texture2D" uid="uid://ditgr5jr5rx8w" path="res://assets/tilemaps/placeholder-tiles.png" id="2_sscig"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sscig"]
+texture = ExtResource("1_s3p2a")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 54)
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, 54)
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, 54)
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, 54)
+0:1/0 = 0
+0:1/0/texture_origin = Vector2i(0, 54)
+1:1/0 = 0
+1:1/0/texture_origin = Vector2i(0, 54)
+2:1/0 = 0
+2:1/0/texture_origin = Vector2i(0, 54)
+3:1/0 = 0
+3:1/0/texture_origin = Vector2i(0, 54)
+0:2/0 = 0
+0:2/0/texture_origin = Vector2i(0, 54)
+1:2/0 = 0
+1:2/0/texture_origin = Vector2i(0, 54)
+2:2/0 = 0
+2:2/0/texture_origin = Vector2i(0, 54)
+3:2/0 = 0
+3:2/0/texture_origin = Vector2i(0, 54)
+0:3/0 = 0
+0:3/0/texture_origin = Vector2i(0, 54)
+1:3/0 = 0
+1:3/0/texture_origin = Vector2i(0, 54)
+2:3/0 = 0
+2:3/0/texture_origin = Vector2i(0, 54)
+3:3/0 = 0
+3:3/0/texture_origin = Vector2i(0, 54)
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7wdlu"]
+texture = ExtResource("2_sscig")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 54)
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, 54)
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_sscig"]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(256, 128)
+physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
+sources/1 = SubResource("TileSetAtlasSource_sscig")
+sources/2 = SubResource("TileSetAtlasSource_7wdlu")
+
+[node name="JakeSandbox" type="Node2D"]
+
+[node name="LogicLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD+/wIAAgAAAAAAAAD+/wEAAgABAAAAAAD+/wAAAgAAAAAAAAD+////AgAAAAAAAAD+//7/AgABAAAAAAD/////AgAAAAAAAAD//wAAAgAAAAAAAAD//wEAAgABAAAAAAD//wIAAgAAAAAAAAD///7/AgABAAAAAAD8/wIAAgAAAAAAAAD9/wIAAgAAAAAAAAAAAAIAAgAAAAAAAAABAAIAAgAAAAAAAAACAAIAAgAAAAAAAAADAAIAAgAAAAAAAAAEAAIAAgAAAAAAAAAEAAEAAgAAAAAAAAAEAAAAAgAAAAAAAAAEAP//AgAAAAAAAAAEAP7/AgAAAAAAAAAEAP3/AgAAAAAAAAAEAPz/AgAAAAAAAAAEAPv/AgAAAAAAAAADAPv/AgAAAAAAAAACAPv/AgAAAAAAAAABAPv/AgAAAAAAAAAAAPv/AgAAAAAAAAD///v/AgAAAAAAAAD+//v/AgAAAAAAAAD9//v/AgAAAAAAAAD8//v/AgAAAAAAAAD8//z/AgAAAAAAAAD8//3/AgAAAAAAAAD8//7/AgAAAAAAAAD8////AgAAAAAAAAD8/wAAAgAAAAAAAAD8/wEAAgAAAAAAAAD9/wEAAgABAAAAAAD9/wAAAgABAAAAAAD9////AgABAAAAAAD9//7/AgABAAAAAAD9//3/AgAAAAAAAAD9//z/AgAAAAAAAAD+//z/AgAAAAAAAAD///z/AgAAAAAAAAAAAPz/AgABAAAAAAABAPz/AgAAAAAAAAACAPz/AgAAAAAAAAADAPz/AgAAAAAAAAADAP3/AgAAAAAAAAADAP7/AgABAAAAAAADAP//AgABAAAAAAADAAAAAgABAAAAAAADAAEAAgABAAAAAAACAAEAAgABAAAAAAABAAEAAgABAAAAAAAAAAEAAgABAAAAAAAAAAAAAgAAAAAAAAAAAP//AgABAAAAAAAAAP7/AgABAAAAAAAAAP3/AgABAAAAAAD+//3/AgAAAAAAAAD///3/AgABAAAAAAABAP3/AgABAAAAAAACAP3/AgAAAAAAAAACAP7/AgABAAAAAAACAP//AgAAAAAAAAACAAAAAgAAAAAAAAABAAAAAgAAAAAAAAABAP//AgAAAAAAAAABAP7/AgABAAAAAAA=")
+tile_set = SubResource("TileSet_sscig")
+
+[node name="PresentationLayer" type="TileMapLayer" parent="."]
+position = Vector2(128, 128)
+tile_set = SubResource("TileSet_sscig")
