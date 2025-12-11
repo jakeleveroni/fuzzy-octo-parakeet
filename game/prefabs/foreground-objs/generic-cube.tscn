@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://jrkyrlkju12"]
+
+[ext_resource type="Texture2D" uid="uid://b62suspaeurfy" path="res://assets/foreground-sprites/cube.png" id="1_7wf0j"]
+
+[node name="GenericCube" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7wf0j")
+offset = Vector2(0, 54)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+y_sort_enabled = true
+polygon = PackedVector2Array(-128, 118, 1, 184, 128, 118, 0, 56)

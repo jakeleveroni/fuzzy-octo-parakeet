@@ -1,9 +1,18 @@
-[gd_scene load_steps=7 format=4 uid="uid://byyr2gh7rkffk"]
+[gd_scene load_steps=11 format=4 uid="uid://byyr2gh7rkffk"]
 
 [ext_resource type="Material" uid="uid://cmbcfxlkxxnwq" path="res://addons/TileMapDual/ghost_material.tres" id="1_nsrtc"]
+[ext_resource type="Texture2D" uid="uid://b62suspaeurfy" path="res://assets/foreground-sprites/cube.png" id="2_70e4g"]
 [ext_resource type="Texture2D" uid="uid://b7crajik7fiaf" path="res://assets/tilemaps-sprites/15-tile-base.png" id="2_riwm8"]
 [ext_resource type="Script" uid="uid://cjk8nronimk5r" path="res://addons/TileMapDual/tile_map_dual.gd" id="3_eoeug"]
 [ext_resource type="PackedScene" uid="uid://dx6v68ryfr7x4" path="res://scenes/base-character.tscn" id="4_riwm8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3stpq"]
+texture = ExtResource("2_70e4g")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 64)
+0:0/0/terrain_set = 1
+0:0/0/terrain = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3xdcc"]
 texture = ExtResource("2_riwm8")
@@ -127,12 +136,33 @@ texture_region_size = Vector2i(256, 256)
 tile_shape = 1
 tile_layout = 5
 tile_size = Vector2i(256, 128)
+physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 1
 terrain_set_0/terrain_0/name = "<any>"
 terrain_set_0/terrain_0/color = Color(0.93333334, 0.50980395, 0.93333334, 1)
 terrain_set_0/terrain_1/name = "FG -15-tile-base.png"
 terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
+terrain_set_1/mode = 1
+terrain_set_1/terrain_0/name = "Terrain 0"
+terrain_set_1/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/4 = SubResource("TileSetAtlasSource_3xdcc")
+sources/1 = SubResource("TileSetAtlasSource_3stpq")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eoeug"]
+texture = ExtResource("2_70e4g")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 64)
+0:0/0/y_sort_origin = 1
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 64, 128, 0, 0, -64, -128, 0)
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_70e4g"]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(256, 128)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_eoeug")
 
 [node name="JodisScene" type="Node2D"]
 
@@ -144,10 +174,15 @@ script = ExtResource("3_eoeug")
 godot_4_3_compatibility = false
 metadata/_custom_type_script = "uid://cjk8nronimk5r"
 
+[node name="ObjectTilemap" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAIAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_70e4g")
+
+[node name="player" parent="ObjectTilemap" instance=ExtResource("4_riwm8")]
+scale = Vector2(4, 4)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.99999994, 0.99999994)
 zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
-
-[node name="player" parent="." instance=ExtResource("4_riwm8")]
-scale = Vector2(4, 4)
