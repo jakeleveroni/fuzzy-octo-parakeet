@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnmlspmjyjol7"]
+
+[ext_resource type="Texture2D" uid="uid://b62suspaeurfy" path="res://assets/foreground-sprites/cube.png" id="1_dfks6"]
+[ext_resource type="PackedScene" uid="uid://jrkyrlkju12" path="res://prefabs/foreground-objs/interactive-tile.tscn" id="3_06ebb"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eoeug"]
+texture = ExtResource("1_dfks6")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 64)
+0:0/0/y_sort_origin = 1
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 64, 128, 0, 0, -64, -128, 0)
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_70e4g"]
+tile_shape = 1
+tile_layout = 5
+tile_size = Vector2i(256, 128)
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 2
+sources/0 = SubResource("TileSetAtlasSource_eoeug")
+
+[node name="ObjectTilemap" type="TileMapLayer"]
+y_sort_enabled = true
+tile_map_data = PackedByteArray(0, 0, 3, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_70e4g")
+
+[node name="InteractiveTile01" parent="." instance=ExtResource("3_06ebb")]
+position = Vector2(0, 512)
