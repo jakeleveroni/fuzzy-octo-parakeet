@@ -5,14 +5,13 @@ func _ready():
 	body_exited.connect(_on_body_exited)
 
 func _on_body_entered(body):
-	print("INTERACTIOn!")
-	# Check if it's the player (optional but recommended)
+	print("ENTER INTERACTION!")
 	if body.is_in_group("player"):
 		print("Player entered!")
 		body.enter_interaction_area();
 
 func _on_body_exited(body):
-	print("EXIT INTERACTIOn!")
+	print("EXIT INTERACTION!")
 	if body.is_in_group("player"):
 		print("Player entered!")
 		body.exit_interaction_area();
