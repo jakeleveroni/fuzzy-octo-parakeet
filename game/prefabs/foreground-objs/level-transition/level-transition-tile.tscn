@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2ilplviofs5j"]
+
+[ext_resource type="Script" uid="uid://faxhocv22rac" path="res://scripts/interactive-tiles/level_transition_tile.gd" id="1_tqi0x"]
+
+[node name="InteractiveTile" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_tqi0x")
+to_level_name = "none"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+y_sort_enabled = true
+polygon = PackedVector2Array(-256, 0, 0, 128, 256, 1, 0, -128)
