@@ -366,10 +366,11 @@ script = ExtResource("1_b0g0g")
 shape = SubResource("CircleShape2D_fw85g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 100
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_fw85g")
 animation = &"idle"
 offset = Vector2(0, -12)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.8, 0.8)
+zoom = Vector2(0.5, 0.5)

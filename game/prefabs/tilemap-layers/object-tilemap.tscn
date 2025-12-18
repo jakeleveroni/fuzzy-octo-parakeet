@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnmlspmjyjol7"]
+[gd_scene load_steps=6 format=3 uid="uid://dnmlspmjyjol7"]
 
 [ext_resource type="Texture2D" uid="uid://b62suspaeurfy" path="res://assets/foreground-sprites/cube.png" id="1_dfks6"]
+[ext_resource type="Texture2D" uid="uid://crj4igjc8bif" path="res://assets/tilemaps-sprites/ramps.png" id="2_oekxf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eoeug"]
 texture = ExtResource("1_dfks6")
@@ -11,6 +12,42 @@ texture_region_size = Vector2i(256, 256)
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, 64, 128, 0, 0, -64, -128, 0)
 0:1/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dfks6"]
+texture = ExtResource("2_oekxf")
+texture_region_size = Vector2i(512, 512)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 107)
+0:0/0/y_sort_origin = 107
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, 107)
+1:0/0/y_sort_origin = 107
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, 107)
+2:0/0/z_index = 1
+2:0/0/y_sort_origin = 107
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, 107)
+3:0/0/z_index = -1
+3:0/0/y_sort_origin = 107
+0:1/0 = 0
+0:1/0/texture_origin = Vector2i(0, 107)
+0:1/0/z_index = 1
+0:1/0/y_sort_origin = 107
+1:1/0 = 0
+1:1/0/texture_origin = Vector2i(0, 107)
+1:1/0/z_index = -1
+1:1/0/y_sort_origin = 107
+2:1/0 = 0
+2:1/0/texture_origin = Vector2i(0, 107)
+2:1/0/y_sort_origin = 107
+3:1/0 = 0
+3:1/0/texture_origin = Vector2i(0, 107)
+3:1/0/y_sort_origin = 107
+0:2/0 = 0
+1:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_70e4g"]
 tile_shape = 1
 tile_layout = 5
@@ -18,6 +55,7 @@ tile_size = Vector2i(512, 256)
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_eoeug")
+sources/1 = SubResource("TileSetAtlasSource_dfks6")
 
 [node name="ObjectTilemap" type="TileMapLayer"]
 y_sort_enabled = true
