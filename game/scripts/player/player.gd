@@ -1,8 +1,9 @@
 extends CharacterBody2D;
 
-@export var speed = 300;
-@export var run_modifier = 2.5;
+@export var speed: int = 300;
+@export var run_modifier: float = 2.5;
 
+var y_bias: int = 0;
 var current_direction
 
 # TODO: remove, only used for testing with interaction areas
@@ -82,37 +83,46 @@ func move():
 		
 	match current_direction:
 		DIRECTION.UP:
-			self.velocity = Vector2(0, -calculated_speed);
+			self.velocity = Vector2(0, -calculated_speed + y_bias);
 			$AnimatedSprite2D.play("up");
 		DIRECTION.UP_LEFT:
-			self.velocity = cartesian_to_isometric(Vector2(-calculated_speed, 0));
+			self.velocity = cartesian_to_isometric(Vector2(-calculated_speed, 0 + y_bias));
 			$AnimatedSprite2D.play("up_left");
 		DIRECTION.UP_RIGHT:
-			self.velocity = cartesian_to_isometric(Vector2(0, -calculated_speed));
+			self.velocity = cartesian_to_isometric(Vector2(0, -calculated_speed + y_bias));
 			$AnimatedSprite2D.play("up_right");
 		DIRECTION.DOWN:
-			self.velocity = Vector2(0, calculated_speed);
+			self.velocity = Vector2(0, calculated_speed + y_bias);
 			$AnimatedSprite2D.play("down");
 		DIRECTION.DOWN_LEFT:
-			self.velocity = cartesian_to_isometric(Vector2(0, calculated_speed));
+			self.velocity = cartesian_to_isometric(Vector2(0, calculated_speed + y_bias));
 			$AnimatedSprite2D.play("down_left");
 		DIRECTION.DOWN_RIGHT:
-			self.velocity = cartesian_to_isometric(Vector2(calculated_speed, 0));
+			self.velocity = cartesian_to_isometric(Vector2(calculated_speed, 0 + y_bias));
 			$AnimatedSprite2D.play("down_right");
 		DIRECTION.LEFT:
-			self.velocity = Vector2(1 * -calculated_speed, 0);
+			self.velocity = Vector2(-calculated_speed, 0 + y_bias);
 			$AnimatedSprite2D.play("left");
 		DIRECTION.RIGHT:
-			self.velocity = Vector2(-1 * -calculated_speed, 0);
+			self.velocity = Vector2(calculated_speed, 0 + y_bias);
 			$AnimatedSprite2D.play("right");
 		DIRECTION.IDLE:
 			self.velocity = Vector2.ZERO;
 			$AnimatedSprite2D.play("idle");
 
 	move_and_slide();
-	
+
 func enter_interaction_area():
 	$AnimatedSprite2D.modulate = Color.CRIMSON;
 	
+
 func exit_interaction_area():
 	$AnimatedSprite2D.modulate = original_color;
+	
+
+func set_y_bias(bias: int):
+	print("RESET BIAS")
+	print(bias)
+	y_bias = bias;
+	print(y_bias)
+	

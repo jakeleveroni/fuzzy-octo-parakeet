@@ -16,4 +16,4 @@ tile_map_data = PackedByteArray("AAD6//v/AQAAAAMAAAD6//z/AQAAAAMAAAD6//3/AQAAAAM
 
 [node name="InteractiveTile" parent="ObjectTilemap" instance=ExtResource("4_7he1i")]
 position = Vector2(-1660, 834)
-to_level_name = "res://levels/level_1.tscn"
+to_level_name = "res://levels/elevation-test.tscn"
