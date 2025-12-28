@@ -105,7 +105,7 @@ func basic_movement(calculated_speed: float):
 			self.velocity = Vector2.ZERO;
 			$AnimatedSprite2D.play("idle");
 
-func y_bias_up_right_movement(calculated_speed: float):
+func y_bias_right_movement(calculated_speed: float):
 	var y_bias_adjustment = y_bias * calculated_speed;
 	
 	match current_direction:
@@ -125,6 +125,26 @@ func y_bias_up_right_movement(calculated_speed: float):
 			self.velocity = Vector2.ZERO;
 			$AnimatedSprite2D.play("idle");
 
+func y_bias_left_movement(calculated_speed: float):
+	var y_bias_adjustment = y_bias * calculated_speed;
+	
+	match current_direction:
+		DIRECTION.UP, DIRECTION.UP_LEFT, DIRECTION.LEFT:
+			self.velocity = Vector2(-calculated_speed, -y_bias_adjustment);
+			$AnimatedSprite2D.play("up_left");
+		DIRECTION.DOWN, DIRECTION.DOWN_RIGHT, DIRECTION.RIGHT:
+			self.velocity = Vector2(calculated_speed, y_bias_adjustment);
+			$AnimatedSprite2D.play("down_right");
+		DIRECTION.UP_RIGHT:
+			self.velocity = Vector2(0, -calculated_speed);
+			$AnimatedSprite2D.play("up");
+		DIRECTION.DOWN_LEFT:
+			self.velocity = Vector2(0, calculated_speed);
+			$AnimatedSprite2D.play("down");
+		DIRECTION.IDLE:
+			self.velocity = Vector2.ZERO;
+			$AnimatedSprite2D.play("idle");
+
 func move():
 	var calculated_speed = speed;
 	
@@ -137,7 +157,10 @@ func move():
 	if y_bias == 0:
 		basic_movement(calculated_speed);
 	else:
-		y_bias_up_right_movement(calculated_speed);
+		if y_bias_direction == DIRECTION.UP_RIGHT:
+			y_bias_right_movement(calculated_speed);
+		else:
+			y_bias_left_movement(calculated_speed);
 
 	move_and_slide();
 
@@ -149,6 +172,7 @@ func exit_interaction_area():
 	$AnimatedSprite2D.modulate = original_color;
 	
 
-func set_y_bias(bias: float):
+func set_y_bias(bias: float, bias_direction: DIRECTION):
 	y_bias = bias;
+	y_bias_direction = bias_direction;
 	
