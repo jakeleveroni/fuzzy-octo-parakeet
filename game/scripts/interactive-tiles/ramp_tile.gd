@@ -1,6 +1,6 @@
 extends Area2D
 
-var bias: int = -600;
+var bias: float = 1.5;
 
 func _ready():
 	body_entered.connect(_on_body_entered)
