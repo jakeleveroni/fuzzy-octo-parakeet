@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://dkcclftlq3jb2"]
+[gd_scene load_steps=8 format=4 uid="uid://dkcclftlq3jb2"]
 
 [ext_resource type="Texture2D" uid="uid://corslbbmebffy" path="res://assets/tilemaps-sprites/cloud-path.png" id="1_m14bk"]
 [ext_resource type="Texture2D" uid="uid://crj4igjc8bif" path="res://assets/tilemaps-sprites/ramps.png" id="2_mf5sn"]
 [ext_resource type="Script" uid="uid://b2mpirxikjqxm" path="res://scripts/interactive-tiles/ramp_tile.gd" id="3_jt7vn"]
 [ext_resource type="PackedScene" uid="uid://dx6v68ryfr7x4" path="res://prefabs/characters/base-character.tscn" id="3_mf5sn"]
-[ext_resource type="PackedScene" uid="uid://b2ilplviofs5j" path="res://prefabs/foreground-objs/level-transition/level-transition-tile.tscn" id="4_ytovx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jt7vn"]
 texture = ExtResource("1_m14bk")
@@ -76,17 +75,8 @@ sources/1 = SubResource("TileSetAtlasSource_ytovx")
 [node name="ElevationTest" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD9//z/AQAAAAAAAAD9//3/AQAAAAAAAAD9//7/AQAAAAAAAAD9////AQAAAAAAAAD9/wAAAQAAAAAAAAD9/wEAAQAAAAAAAAD+//z/AQAAAAAAAAD+//3/AQAAAAAAAAD+//7/AQAAAAAAAAD+////AAAAAAMAAAD+/wAAAAAAAAMAAAD+/wEAAAAAAAMAAAD///z/AQABAAEAAAD///3/AQABAAEAAAD///7/AQAAAAAAAAD/////AAAAAAMAAAD//wAAAAAAAAMAAAD//wEAAAAAAAMAAAAAAPz/AAAAAAMAAAAAAP3/AQAAAAAAAAAAAP7/AQAAAAAAAAAAAP//AAAAAAMAAAAAAAAAAAAAAAMAAAAAAAEAAAAAAAMAAAABAPz/AAAAAAMAAAABAP3/AQAAAAAAAAABAP7/AQAAAAAAAAABAP//AQAAAAEAAAABAAAAAAAAAAMAAAABAAEAAAAAAAMAAAACAPz/AAAAAAMAAAACAP3/AQAAAAAAAAACAP7/AQAAAAAAAAACAP//AAAAAAMAAAACAAAAAAAAAAMAAAACAAEAAAAAAAMAAAD9/wIAAQAAAAAAAAD9/wMAAQAAAAAAAAD9/wQAAAAAAAMAAAD+/wIAAQABAAEAAAD+/wMAAAAAAAMAAAD+/wQAAAAAAAMAAAD//wIAAAAAAAMAAAD//wMAAAAAAAMAAAD//wQAAAAAAAMAAAAAAAIAAAAAAAMAAAAAAAMAAAAAAAMAAAAAAAQAAAAAAAMAAAABAAIAAAAAAAMAAAABAAMAAAAAAAMAAAABAAQAAAAAAAMAAAACAAIAAAAAAAMAAAACAAMAAAAAAAMAAAACAAQAAAAAAAMAAAA=")
+tile_map_data = PackedByteArray("AAD9//z/AAAAAAMAAAD9//3/AAAAAAMAAAD9//7/AAAAAAMAAAD9////AAAAAAMAAAD9/wAAAAAAAAMAAAD9/wEAAAAAAAMAAAD+//z/AQAAAAAAAAD+//3/AQAAAAAAAAD+//7/AAAAAAMAAAD+////AAAAAAMAAAD+/wAAAAAAAAMAAAD+/wEAAAAAAAMAAAD///z/AQABAAEAAAD///3/AQABAAEAAAD///7/AQAAAAAAAAD/////AAAAAAMAAAD//wAAAAAAAAMAAAD//wEAAAAAAAMAAAAAAPz/AAAAAAMAAAAAAP3/AQAAAAAAAAAAAP7/AQAAAAAAAAAAAP//AAAAAAMAAAAAAAAAAAAAAAMAAAAAAAEAAAAAAAMAAAABAPz/AAAAAAMAAAABAP3/AQAAAAAAAAABAP7/AQAAAAAAAAABAP//AQAAAAEAAAABAAAAAAAAAAMAAAABAAEAAAAAAAMAAAACAPz/AAAAAAMAAAACAP3/AQAAAAAAAAACAP7/AQAAAAAAAAACAP//AQAAAAEAAAACAAAAAAAAAAMAAAACAAEAAAAAAAMAAAD9/wIAAAAAAAMAAAD9/wMAAAAAAAMAAAD9/wQAAAAAAAMAAAD+/wIAAAAAAAMAAAD+/wMAAAAAAAMAAAD+/wQAAAAAAAMAAAD//wIAAAAAAAMAAAD//wMAAAAAAAMAAAD//wQAAAAAAAMAAAAAAAIAAAAAAAMAAAAAAAMAAAAAAAMAAAAAAAQAAAAAAAMAAAABAAIAAAAAAAMAAAABAAMAAAAAAAMAAAABAAQAAAAAAAMAAAACAAIAAAAAAAMAAAACAAMAAAAAAAMAAAACAAQAAAAAAAMAAAA=")
 tile_set = SubResource("TileSet_dr2wv")
+script = ExtResource("3_jt7vn")
 
 [node name="player" parent="TileMapLayer" instance=ExtResource("3_mf5sn")]
-
-[node name="temp ramp tile" parent="TileMapLayer" instance=ExtResource("4_ytovx")]
-position = Vector2(768, 128)
-script = ExtResource("3_jt7vn")
-direction = 1
-
-[node name="temp ramp tile2" parent="TileMapLayer" instance=ExtResource("4_ytovx")]
-position = Vector2(-768, 128)
-script = ExtResource("3_jt7vn")
-direction = 0
