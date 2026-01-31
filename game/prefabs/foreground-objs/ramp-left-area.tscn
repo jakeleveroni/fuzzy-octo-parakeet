@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://nktge4ndm02e"]
+
+[node name="RampTile" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(-9, -59)
+polygon = PackedVector2Array(-247, -176, 9, 208, 265, 80, 8, -304)

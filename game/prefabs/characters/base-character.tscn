@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://164vhsh6f5ag" path="res://assets/player-sprites/Chibi-character-Sprites.png" id="1_4y6ol"]
 [ext_resource type="Script" uid="uid://bqttkqpqiy076" path="res://scripts/player/player.gd" id="1_b0g0g"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_fw85g"]
-radius = 5.0990195
+[sub_resource type="CircleShape2D" id="CircleShape2D_ot8y5"]
+radius = 35.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_53d7a"]
 atlas = ExtResource("1_4y6ol")
@@ -358,15 +358,16 @@ animations = [{
 [node name="player" type="CharacterBody2D"]
 y_sort_enabled = true
 collision_layer = 2
-collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_b0g0g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_fw85g")
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_ot8y5")
+debug_color = Color(0.9496457, 0.102450185, 0.5051807, 0.41960785)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = 100
+y_sort_enabled = true
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_fw85g")
 animation = &"idle"
